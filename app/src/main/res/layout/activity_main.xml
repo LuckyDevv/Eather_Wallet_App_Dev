@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1E2325"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/preloader_image_logo"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:layout_marginStart="93dp"
+        android:layout_marginTop="380dp"
+        android:layout_marginEnd="93dp"
+        android:contentDescription="EATHER Wallet"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <ImageView
+        android:id="@+id/preloader_image"
+        android:layout_width="64dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="155dp"
+        android:layout_marginEnd="156dp"
+        android:layout_marginBottom="170dp"
+        android:contentDescription="Загрузка серверных ресурсов..."
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/my_loader" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/balance_group"
+        android:layout_width="fill_parent"
+        android:layout_height="220dp"
+        android:background="@drawable/balance_gradient"
+        android:visibility="invisible"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <TextView
+            android:id="@+id/int_balance_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/sf_ui_display_black"
+            android:text="@string/_zero_balance_int"
+            android:textColor="#000000"
+            android:textSize="45sp"
+            android:typeface="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/user_avatar_img"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="47dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="26dp"
+            android:contentDescription="@string/user_avatar_text"
+            app:layout_constraintBottom_toTopOf="@+id/int_balance_text"
+            app:layout_constraintEnd_toStartOf="@+id/username_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/user" />
+
+        <TextView
+            android:id="@+id/username_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/sf_ui_display_heavy"
+            android:text="@string/hello_username_text"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/hello_text"
+            app:layout_constraintStart_toEndOf="@+id/user_avatar_img"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/hello_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="-5dp"
+            android:layout_marginBottom="28dp"
+            android:fontFamily="@font/sf_ui_display_regular"
+            android:text="@string/hello_main_text"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/int_balance_text"
+            app:layout_constraintStart_toEndOf="@+id/user_avatar_img"
+            app:layout_constraintTop_toBottomOf="@+id/username_text" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="76dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="49dp"
+            android:layout_marginEnd="17dp"
+            android:layout_marginBottom="141dp"
+            android:background="@drawable/currency_style"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/sf_ui_text_bold"
+                android:text="@string/currency_text"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/imageView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="17dp"
+                android:layout_height="19dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="6dp"
+                android:contentDescription="@string/currency_description_text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/rub" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/currency_balance_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="42dp"
+            android:fontFamily="@font/sf_ui_display_black"
+            android:text="@string/currency_symbol_text"
+            android:textColor="@color/appearance_balance"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_avatar_img" />
+
+        <TextView
+            android:id="@+id/float_balance_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="42dp"
+            android:fontFamily="@font/sf_ui_display_black"
+            android:text="@string/_zero_balance_double"
+            android:textColor="@color/appearance_balance"
+            android:textSize="30sp"
+            app:layout_constraintStart_toEndOf="@+id/int_balance_text"
+            app:layout_constraintTop_toBottomOf="@+id/user_avatar_img" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/news_title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/sf_ui_display_semibold"
+        android:text="@string/news_and_suggestions_text"
+        android:textColor="#FFFFFF"
+        android:textSize="21sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/news_container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/balance_group" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/navigation_container"
+        android:layout_width="fill_parent"
+        android:layout_height="80dp"
+        android:layout_marginStart="-3dp"
+        android:layout_marginEnd="-3dp"
+        android:layout_marginBottom="-3dp"
+        android:background="@drawable/nav_border"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:stretchColumns="*"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <FrameLayout
+                android:layout_width="95dp"
+                android:layout_height="match_parent"
+                android:onClick="setMainNav">
+
+                <ImageButton
+                    android:id="@+id/home_nav_button"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginHorizontal="25dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/home"
+                    android:contentDescription="@string/home_nav_text"
+                    android:onClick="setMainNav"
+                    android:scaleType="center" />
+
+                <TextView
+                    android:id="@+id/home_nav_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="45dp"
+                    android:fontFamily="@font/sf_ui_display_bold"
+                    android:onClick="setMainNav"
+                    android:scaleType="center"
+                    android:text="@string/home_nav_text"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="95dp"
+                android:layout_height="match_parent"
+                android:onClick="setTransferNav">
+
+                <ImageButton
+                    android:id="@+id/transfer_nav_button"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginHorizontal="25dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/money_send"
+                    android:contentDescription="@string/send_money_nav_text"
+                    android:onClick="setTransferNav"
+                    android:scaleType="center" />
+
+                <TextView
+                    android:id="@+id/transfer_nav_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="45dp"
+                    android:fontFamily="@font/sf_ui_display_bold"
+                    android:onClick="setTransferNav"
+                    android:scaleType="center"
+                    android:text="@string/send_money_nav_text"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="95dp"
+                android:layout_height="match_parent"
+                android:onClick="setHistoryNav">
+
+                <ImageButton
+                    android:id="@+id/history_nav_button"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginHorizontal="25dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/history"
+                    android:contentDescription="@string/history_nav_text"
+                    android:onClick="setHistoryNav"
+                    android:scaleType="center" />
+
+                <TextView
+                    android:id="@+id/history_nav_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="45dp"
+                    android:fontFamily="@font/sf_ui_display_bold"
+                    android:onClick="setHistoryNav"
+                    android:scaleType="center"
+                    android:text="@string/history_nav_text"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="95dp"
+                android:layout_height="match_parent"
+                android:onClick="setNotifyNav">
+
+                <ImageButton
+                    android:id="@+id/notifications_nav_button"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginHorizontal="25dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bell"
+                    android:contentDescription="@string/notifications_nav_text"
+                    android:onClick="setNotifyNav"
+                    android:scaleType="center" />
+
+                <TextView
+                    android:id="@+id/notifications_nav_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="45dp"
+                    android:fontFamily="@font/sf_ui_display_bold"
+                    android:onClick="setNotifyNav"
+                    android:scaleType="center"
+                    android:text="@string/notifications_nav_text"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </FrameLayout>
+        </TableRow>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:id="@+id/news_container"
+        android:layout_width="410dp"
+        android:layout_height="543dp"
+        android:layout_marginBottom="2dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/navigation_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/news_title_text">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="10dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:gravity="clip_vertical"
+                android:orientation="vertical"
+                tools:ignore="UselessParent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/news_item"
+                    android:paddingHorizontal="10dp">
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="115dp"
+                        android:layout_height="100dp"
+                        android:adjustViewBounds="true"
+                        android:background="@drawable/avatar_border"
+                        android:clipToOutline="true"
+                        android:contentDescription="TODO"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/server" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/sf_ui_display_semibold"
+                        android:text="Внедрение WebSocket"
+                        android:textColor="@color/white"
+                        android:textSize="21sp"
+                        app:layout_constraintStart_toEndOf="@+id/imageView2"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="240dp"
+                        android:layout_height="68dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="С сегодняшнего дня, наш сайт использует все актуальные технологии WebSocket. Но что такое WebSocket?"
+                        android:textColor="#b8b8b8"
+                        android:textSize="13sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/imageView2"
+                        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:gravity="clip_vertical"
+                android:orientation="vertical"
+                tools:ignore="UselessParent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/news_item"
+                    android:paddingHorizontal="10dp">
+
+                    <ImageView
+                        android:id="@+id/imageView6"
+                        android:layout_width="115dp"
+                        android:layout_height="100dp"
+                        android:background="@drawable/avatar_border"
+                        android:clipToOutline="true"
+                        android:contentDescription="TODO"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/update" />
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/sf_ui_display_semibold"
+                        android:text="Обновление 2.0-dev"
+                        android:textColor="@color/white"
+                        android:textSize="21sp"
+                        app:layout_constraintStart_toEndOf="@+id/imageView6"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView7"
+                        android:layout_width="240dp"
+                        android:layout_height="68dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="Данное обновление означает только то, что наше приложение наконец официально появилось на GitHub! Разработка идёт очень активно, и в скором времени вы сможете увидеть полную версию кошелька. Наш кошелёк будет интегрирован в наш интернет-магазин для проведения оплаты заказов."
+                        android:textColor="#b8b8b8"
+                        android:textSize="13sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/imageView6"
+                        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </TableRow>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

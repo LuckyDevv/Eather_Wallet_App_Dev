@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">EATHER Wallet</string>
+    <string name="send_money_nav_text">Переводы</string>
+    <string name="history_nav_text">История</string>
+    <string name="notifications_nav_text">Увед-ния</string>
+    <string name="home_nav_text">Главная</string>
+    <string name="news_and_suggestions_text">Новости и предложения</string>
+    <string name="currency_text">RUB</string>
+    <string name="hello_main_text">Добро пожаловать!</string>
+    <string name="currency_description_text">Текущая валюта</string>
+    <string name="user_avatar_text">Ваш аватар</string>
+    <string name="_zero_balance_int">0</string>
+    <string name="hello_username_text">User Name,</string>
+    <string name="currency_symbol_text">₽</string>
+    <string name="_zero_balance_double">,0</string>
+</resources>
